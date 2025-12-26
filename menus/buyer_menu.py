@@ -1,6 +1,5 @@
 from classes.buyer import Buyer
 
-
 def show_buyer_menu():
     print("\n==============================")
     print("        BUYER MENU            ")
@@ -12,11 +11,6 @@ def show_buyer_menu():
 
 
 def buyer_menu():
-    """
-    Buyer menu flow 
-    """
-
-    # Demo buyer (temporary)
     buyer = Buyer(
         user_id=1,
         user_name="Ali",
