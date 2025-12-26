@@ -1,5 +1,6 @@
 from classes.buyer import Buyer
 
+
 def show_buyer_menu():
     print("\n==============================")
     print("        BUYER MENU            ")
@@ -10,7 +11,12 @@ def show_buyer_menu():
     print("0. Logout")
 
 
-def main():
+def buyer_menu():
+    """
+    Buyer menu flow 
+    """
+
+    # Demo buyer (temporary)
     buyer = Buyer(
         user_id=1,
         user_name="Ali",
@@ -36,6 +42,12 @@ def main():
             break
         else:
             print("Invalid choice. Please try again.")
+
+from menus.buyer_menu import buyer_menu
+
+
+def main():
+    buyer_menu()
 
 
 if __name__ == "__main__":
