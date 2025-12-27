@@ -2,10 +2,11 @@ from classes.user import User
 
 class Buyer(User):
 
-    def __init__(self, user_id, user_name, user_email, delivery_address, payment_method):
+    def __init__(self, user_id, user_name, user_email, order_history, delivery_address, payment_method):
         super().__init__(user_id, user_name, user_email)
         self.delivery_address = delivery_address
         self.payment_method = payment_method
+        self.order_history = []
 
     def browse_produce(self):
         print("\nAvailable produce:")
@@ -40,4 +41,13 @@ class Buyer(User):
             print("Please enter valid numbers.")
 
     def view_orders(self):
-        print("\nNo previous orders available (demo).")
+        if not self.order_history:
+            print("\nNo orders placed yet.")
+            return
+
+        print("\nOrder History:")
+        for i, order in enumerate(self.order_history, start=1):
+            print(
+                f"{i}. {order['quantity']} x {order['item']} "
+                f"(Total: RM{order['total']:.2f})"
+            )
