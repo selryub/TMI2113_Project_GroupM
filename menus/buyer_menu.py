@@ -13,8 +13,8 @@ def show_buyer_menu():
 def buyer_menu():
     buyer = Buyer(
         user_id=1,
-        user_name="Ali",
-        user_email="ali@email.com",
+        user_name="Ashley",
+        user_email="ashley88@email.com",
         delivery_address="Kuching",
         payment_method="Cash"
     )
@@ -36,13 +36,3 @@ def buyer_menu():
             break
         else:
             print("Invalid choice. Please try again.")
-
-from menus.buyer_menu import buyer_menu
-
-
-def main():
-    buyer_menu()
-
-
-if __name__ == "__main__":
-    main()

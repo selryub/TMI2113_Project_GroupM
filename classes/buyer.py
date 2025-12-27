@@ -1,28 +1,43 @@
 from classes.user import User
 
-
 class Buyer(User):
-    def __init__(self, user_id, user_name, user_email,
-                 delivery_address, payment_method):
+
+    def __init__(self, user_id, user_name, user_email, delivery_address, payment_method):
         super().__init__(user_id, user_name, user_email)
-        self.order_history = []
         self.delivery_address = delivery_address
         self.payment_method = payment_method
 
     def browse_produce(self):
-        print("\nAvailable Produce:")
+        print("\nAvailable produce:")
         print("1. Tomato - RM3/kg")
         print("2. Spinach - RM2/bunch")
         print("3. Corn - RM1.50/unit")
 
     def place_order(self):
-        print("Order placed successfully.")
-        self.order_history.append("Order #001")
+        produce = {
+            1: ("Tomato", 3.00),
+            2: ("Spinach", 2.00),
+            3: ("Corn", 1.50)
+        }
+
+        print("\nAvailable Produce:")
+        for key, value in produce.items():
+            print(f"{key}. {value[0]} - RM{value[1]}")
+
+        try:
+            choice = int(input("Select produce number: "))
+            quantity = int(input("Enter quantity: "))
+
+            if choice in produce:
+                item, price = produce[choice]
+                total = price * quantity
+                print(f"\nOrder placed: {quantity} x {item}")
+                print(f"Total price: RM{total:.2f}")
+            else:
+                print("Invalid selection.")
+
+        except ValueError:
+            print("Please enter valid numbers.")
 
     def view_orders(self):
-        if not self.order_history:
-            print("No orders yet.")
-        else:
-            print("Order History:")
-            for order in self.order_history:
-                print(order)
+        print("\nNo previous orders available (demo).")
