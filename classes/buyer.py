@@ -2,7 +2,7 @@ from classes.user import User
 
 class Buyer(User):
 
-    def __init__(self, user_id, user_name, user_email, order_history, delivery_address, payment_method):
+    def __init__(self, user_id, user_name, user_email, delivery_address, payment_method):
         super().__init__(user_id, user_name, user_email)
         self.delivery_address = delivery_address
         self.payment_method = payment_method
@@ -32,6 +32,15 @@ class Buyer(User):
             if choice in produce:
                 item, price = produce[choice]
                 total = price * quantity
+
+                order = {
+                    "item": item,
+                    "quantity": quantity,
+                    "total": total
+                }
+
+                self.order_history.append(order)
+
                 print(f"\nOrder placed: {quantity} x {item}")
                 print(f"Total price: RM{total:.2f}")
             else:
