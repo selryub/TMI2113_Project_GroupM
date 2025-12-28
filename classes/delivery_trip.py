@@ -1,7 +1,6 @@
 from datetime import datetime
 from classes.delivery_log import DeliveryLog
 
-
 class DeliveryTrip:
     def __init__(self, tripID):
         self.__tripID = tripID
