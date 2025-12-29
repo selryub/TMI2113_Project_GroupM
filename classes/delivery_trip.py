@@ -12,7 +12,7 @@ class DeliveryTrip:
     def getTripID(self):
         return self.__tripID
 
-    # UC5 — assign driver to trip
+    # Assign Driver to Trip
     def assignDriver(self, driver):
         self.__assignedDriver = driver
         driver.assignTrip(self)
@@ -29,7 +29,7 @@ class DeliveryTrip:
         self.__logs.append(log)
         print(f"✔ Driver {driver.getName()} successfully assigned to Trip {self.__tripID}")
 
-    # aggregation — orders added into trip
+    # Aggregation - orders added into trip
     def addOrder(self, order):
         self.__orders.append(order)
 
@@ -44,7 +44,7 @@ class DeliveryTrip:
         self.__logs.append(log)
         print(f"✔ Order {order.getOrderID()} added into Trip {self.__tripID}")
 
-    # UC6 — update delivery status
+    # Update Delivery Status
     def updateStatus(self, newStatus):
         self.__status = newStatus
 
@@ -62,7 +62,7 @@ class DeliveryTrip:
         self.__logs.append(log)
         print(f"✔ Trip {self.__tripID} status updated to {newStatus}")
 
-    # used for UI testing / encapsulation evidence
+    # for UI testing / encapsulation 
     def viewTripDetails(self):
         driver = self.__assignedDriver.getName() if self.__assignedDriver else "None"
 

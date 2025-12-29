@@ -18,7 +18,7 @@ def deliveryMenu():
         print("3. Add Order to Trip")
         print("4. View Trip Details")
         print("5. View Delivery Logs")
-        print("6. Exit to Main Menu")
+        print("6. Back to Main Menu")
 
         choice = input("Select option: ")
 
