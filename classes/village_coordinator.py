@@ -1,8 +1,8 @@
 from classes.user import User
 
 class VillageCoordinator(User):
-    def __init__(self, user_id, user_name, user_email, villageName, contactNumber):
-        super().__init__(user_id, user_name, user_email)
+    def __init__(self, user_id, user_name, user_email, user_password, villageName, contactNumber):
+        super().__init__(user_id, user_name, user_email, user_password)
         self.__villageName = villageName
         self.__contactNumber = contactNumber
         self.__managedFarmers = []

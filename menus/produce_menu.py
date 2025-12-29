@@ -10,7 +10,7 @@ def produceMenu():
         print("3. Update Produce Grade")
         print("4. Update Produce Price")
         print("5. View Produce Details")
-        print("0. Back to Main Menu")
+        print("6. Back to Main Menu")
 
         choice = input("Select option: ")
 
@@ -59,7 +59,7 @@ def produceMenu():
             for p in produce_list:
                 print(p.getProduceDetails())
 
-        elif choice == "0":
+        elif choice == "6":
             break
         else:
             print("Invalid option.")

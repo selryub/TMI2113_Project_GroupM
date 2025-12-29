@@ -10,7 +10,7 @@ def farmerMenu():
         print("2. Update Produce Details")
         print("3. View Settlement Statement")
         print("4. Review Delivery Records")
-        print("0. Back to Main Menu")
+        print("5. Back to Main Menu")
 
         choice = input("Select option: ")
 
@@ -40,7 +40,7 @@ def farmerMenu():
         elif choice == "4":
             farmer.reviewDeliveryRecords()
 
-        elif choice == "0":
+        elif choice == "5":
             break
 
         else:

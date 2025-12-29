@@ -44,7 +44,7 @@ def userMenu():
             if current_user is None:
                 print("\nNo user found. Please register first.")
             else:
-                current_user.view_profile()
+                current_user.viewProfile()
 
         # -------- VERIFY EMAIL --------
         elif choice == "4":

@@ -11,7 +11,7 @@ def orderMenu():
         print("4. Update Order Status")
         print("5. View Order Details")
         print("6. View All Orders")
-        print("0. Back to Main Menu")
+        print("7. Back to Main Menu")
         
         choice = input("Select option: ")
         
@@ -110,7 +110,7 @@ def orderMenu():
                 for order in orders:
                     print(f"Order ID: {order.getOrderID()} | Status: {order.getStatus()} | Total: RM{order.getTotalPrice():.2f}")
         
-        elif choice == "0":
+        elif choice == "7":
             break
         
         else:
