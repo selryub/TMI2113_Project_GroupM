@@ -13,8 +13,8 @@ def deliveryMenu():
     while True:
 
         print("\n===== Community Driver Delivery Menu =====")
-        print("1. Assign Delivery Trip (UC5)")
-        print("2. Update Delivery Status (UC6)")
+        print("1. Assign Delivery Trip")
+        print("2. Update Delivery Status")
         print("3. Add Order to Trip")
         print("4. View Trip Details")
         print("5. View Delivery Logs")
@@ -22,16 +22,16 @@ def deliveryMenu():
 
         choice = input("Select option: ")
 
-        # UC5 Assign Trip
+        # Assign Trip
         if choice == "1":
             trip.assignDriver(driver)
 
-        # UC6 Update Status
+        # Update Status
         elif choice == "2":
             newStatus = input("Enter new status (Assigned / On the Way / Delivered): ")
             trip.updateStatus(newStatus)
 
-        # Aggregation Evidence
+        # Aggregation 
         elif choice == "3":
             print("\nSelect order to add:")
             print("1. Order O1001")
@@ -43,11 +43,11 @@ def deliveryMenu():
             else:
                 trip.addOrder(order2)
 
-        # Encapsulation Evidence
+        # Encapsulation 
         elif choice == "4":
             trip.viewTripDetails()
 
-        # Traceability Evidence
+        # Traceability 
         elif choice == "5":
             trip.viewLogs()
 

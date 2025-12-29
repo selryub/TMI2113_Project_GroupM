@@ -10,7 +10,7 @@ def show_buyer_menu():
     print("0. Logout")
 
 
-def buyer_menu():
+def buyerMenu():
     buyer = Buyer(
         user_id=1,
         user_name="Ashley",
