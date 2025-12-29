@@ -37,10 +37,10 @@ def mainMenu():
         print("\n===== SYSTEM MAIN MENU =====")
         print("1. User Menu")
         print("2. Buyer Menu")
-        print("3. Village Coordinator Menu")
-        print("4. Farmer Menu")
-        print("5. Produce Menu")
-        print("6. Order Menu")
+        print("3. Farmer Menu")
+        print("4. Produce Menu")
+        print("5. Order Menu")
+        print("6. Villae Coordinator Menu")
         print("7. Delivery Trip Menu")
         print("8. Community Driver Menu")
         print("9. Exit")
@@ -52,13 +52,13 @@ def mainMenu():
         elif choice == "2":
             buyer_menu()
         elif choice == "3":
-            villageCoordinatorMenu()
-        elif choice == "4":
             farmerMenu()
-        elif choice == "5":
+        elif choice == "4":
             produceMenu()
-        elif choice == "6":
+        elif choice == "5":
             orderMenu()
+        elif choice == "6":
+            villageCoordinatorMenu()
         elif choice == "7":
             deliveryTripMenu(trips, drivers, orders)
         elif choice == "8":
