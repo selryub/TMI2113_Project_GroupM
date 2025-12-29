@@ -8,6 +8,18 @@ class Produce:
         self.__pricePerKg = pricePerKg
         self.__availabilityStatus = True  
 
+    def updateWeight(self, weight):
+        self.__weight = weight
+        print(f"Produce weight updated to {weight} kg")
+
+    def updateGrade(self, grade):
+        self.__grade = grade
+        print(f"Produce grade updated to {grade}")
+
+    def updatePrice(self, price):
+        self.__pricePerKg = price
+        print(f"Produce price updated to RM{price}/kg")
+
     def getProduceDetails(self):
         return {
             "id": self.__produceID,
@@ -30,3 +42,6 @@ class Produce:
 
     def checkAvailability(self):
         return self.__availabilityStatus  
+
+    def setAvailability(self, availability):
+        self.__availabilityStatus = availability  
