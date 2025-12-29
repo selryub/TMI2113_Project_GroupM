@@ -28,7 +28,7 @@ class VillageCoordinator(User):
 
     # UC6 — Assign Delivery Trip
     def scheduleDeliveryTrip(self, trip, driver):
-        trip.assignDriver(driver)
+        trip.assign_driver(driver)
         print("Delivery trip scheduled")
 
     def manageFarmer(self, farmer):
