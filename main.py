@@ -1,6 +1,6 @@
 from menus.user_menu import userMenu
 from menus.buyer_menu import buyerMenu
-from menus.coordinator_menu import coordinatorMenu
+from menus.village_coordinator_menu import villageCoordinatorMenu 
 from menus.farmer_menu import farmerMenu
 from menus.produce_menu import produceMenu
 from menus.order_menu import orderMenu
