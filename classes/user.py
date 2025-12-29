@@ -1,26 +1,26 @@
 class User:
-    def __init__(self, user_id, user_name, user_email):
+    def __init__(self, user_id, user_name, user_email, password):
         self.user_id = user_id
         self.user_name = user_name
         self.user_email = user_email
-    
-    def register(self):
-        print("\n===== USER REGISTRATION =====")
-        print(f"User ID   : {self.user_id}")
-        print(f"Name      : {self.user_name}")
-        print(f"Email     : {self.user_email}")
-        print("Status    : Registration Successful")
-        print("==================================")
+        self.password = password
+        self.is_verified = False
 
-    def login(self):
-        print("User logged in.")
+    def register(self):
+        print("User registered successfully.")
+
+    def verify_email(self):
+        self.is_verified = True
+        print("Email verified.")
+
+    def reset_password(self, new_password):
+        self.password = new_password
+        print("Password reset successful.")
 
     def logout(self):
         print("User logged out.")
 
     def view_profile(self):
-        print("\n===== USER PROFILE =====")
-        print("User ID :", self.user_id)
-        print("Name    :", self.user_name)
-        print("Email   :", self.user_email)
-        print("========================")
+        print("User Profile")
+        print("Name:", self.user_name)
+        print("Email:", self.user_email)
