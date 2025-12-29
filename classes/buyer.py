@@ -2,8 +2,9 @@ from classes.user import User
 
 class Buyer(User):
 
-    def __init__(self, user_id, user_name, user_email, delivery_address, payment_method):
-        super().__init__(user_id, user_name, user_email)
+    def __init__(self, user_id, user_name, user_email, user_password,
+                 delivery_address, payment_method):
+        super().__init__(user_id, user_name, user_email, user_password)
         self.delivery_address = delivery_address
         self.payment_method = payment_method
         self.order_history = []

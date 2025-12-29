@@ -9,12 +9,12 @@ def show_buyer_menu():
     print("3. View Orders")
     print("0. Logout")
 
-
-def buyerMenu():
+def buyer_menu():
     buyer = Buyer(
         user_id=1,
         user_name="Ashley",
         user_email="ashley88@email.com",
+        user_password="123456",
         delivery_address="Kuching",
         payment_method="Cash"
     )
