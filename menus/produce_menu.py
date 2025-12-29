@@ -10,7 +10,7 @@ def produceMenu():
         print("3. Update Produce Grade")
         print("4. Update Produce Price")
         print("5. View Produce Details")
-        print("6. Back to Main Menu")
+        print("0. Back to Main Menu")
 
         choice = input("Select option: ")
 
@@ -23,7 +23,7 @@ def produceMenu():
             price = float(input("Enter Price per kg: "))
             produce = Produce(pid, pname, category, grade, weight, price)
             produce_list.append(produce)
-            print(f"✔ Produce {pname} added.")
+            print(f"Produce {pname} added.")
 
         elif choice == "2":
             pid = input("Enter Produce ID to update weight: ")
@@ -59,7 +59,7 @@ def produceMenu():
             for p in produce_list:
                 print(p.getProduceDetails())
 
-        elif choice == "6":
+        elif choice == "0":
             break
         else:
             print("Invalid option.")
