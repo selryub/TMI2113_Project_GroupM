@@ -1,7 +1,7 @@
 from classes.village_coordinator import VillageCoordinator
 from classes.produce import Produce
 
-def coordinatorMenu():
+def villageCoordinatorMenu():
     vc = VillageCoordinator(1, "Alice", "alice@email.com", "Happy Village", "012-3456789")
 
     while True:
