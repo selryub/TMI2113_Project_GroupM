@@ -74,7 +74,7 @@ def produceMenu(produce_list):
             if not found:
                 print("Produce not found.")
 
-        elif choice == "6":  
+        elif choice == "6": 
             pid = input("Enter Produce ID to view details: ")
             found = False
             for p in produce_list:
@@ -90,6 +90,3 @@ def produceMenu(produce_list):
 
         else:
             print("Invalid option. Please try again.")
-
-
-
