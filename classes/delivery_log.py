@@ -1,21 +1,33 @@
+from datetime import datetime
+
+
 class DeliveryLog:
-    def __init__(self, logID, tripID, action, details, timestamp):
-        self.__logID = logID
-        self.__tripID = tripID
-        self.__action = action
-        self.__details = details
-        self.__timestamp = timestamp
+    def __init__(self, trip_id):
+        self.trip_id = trip_id
+        self.entries = []   # list of dict log records
 
-    # returns formatted string (for readability)
-    def formatLog(self):
-        return f"[Log {self.__logID}] ({self.__timestamp}) {self.__action} - {self.__details}"
+    def add_entry(self, action, user="System"):
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        record = {
+            "time": timestamp,
+            "user": user,
+            "action": action
+        }
+        self.entries.append(record)
+        print(f"[LOG] {action} ({timestamp})")
 
-    # prints output to screen (for UI test evidence)
-    def displayLog(self):
-        print("\n---------------- Delivery Log Entry ----------------")
-        print(f"Log ID   : {self.__logID}")
-        print(f"Trip ID  : {self.__tripID}")
-        print(f"Action   : {self.__action}")
-        print(f"Details  : {self.__details}")
-        print(f"Time     : {self.__timestamp}")
-        print("---------------------------------------------------")
+    def display_log(self):
+        print("\n===== DELIVERY LOG =====")
+        if not self.entries:
+            print("No log records yet.")
+            return
+
+        for entry in self.entries:
+            print(f"{entry['time']} | {entry['user']} | {entry['action']}")
+
+    def summarize_actions(self):
+        print("\n===== LOG SUMMARY =====")
+        print(f"Total Recorded Actions: {len(self.entries)}")
+
+    def get_latest_action(self):
+        return self.entries[-1]["action"] if self.entries else None

@@ -6,7 +6,6 @@ from menus.produce_menu import produceMenu
 from menus.order_menu import orderMenu
 from menus.delivery_trip_menu import deliveryTripMenu
 from menus.community_driver_menu import communityDriverMenu
-from menus.delivery_log_menu import deliveryLogMenu
 
 def mainMenu():
     while True:
@@ -19,8 +18,7 @@ def mainMenu():
         print("6. Order Menu")
         print("7. Delivery Trip Menu")
         print("8. Community Driver Menu")
-        print("9. Delivery Log Menu")
-        print("10. Exit")
+        print("9. Exit")
 
         choice = input("Select option: ")
 
@@ -41,8 +39,6 @@ def mainMenu():
         elif choice == "8":
             communityDriverMenu()
         elif choice == "9":
-            deliveryLogMenu()
-        elif choice == "10":
             print("Exiting system...")
             break
         else:

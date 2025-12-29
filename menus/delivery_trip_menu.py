@@ -1,48 +1,62 @@
-def deliveryTripMenu(trips, drivers, orders):
+from classes.delivery_trip import DeliveryTrip
+
+
+def delivery_trip_menu(trips, drivers, orders):
     while True:
-        print("\n===== Delivery Trip Menu =====")
+        print("\n===== DELIVERY TRIP MENU =====")
         print("1. Assign Driver")
-        print("2. Add Order")
-        print("3. Update Status")
+        print("2. Add Order to Trip")
+        print("3. Update Trip Status")
         print("4. View Trip Details")
-        print("5. View Logs")
+        print("5. View Trip Logs")
         print("6. Calculate Cost")
-        print("7. Back to Main Menu")
-        
+        print("0. Back")
+
         choice = input("Select: ").strip()
-        tripID = input("Enter Trip ID: ").strip()
-        if tripID not in trips:
+
+        if choice == "0":
+            break
+
+        trip_id = input("Enter Trip ID: ").strip()
+
+        if trip_id not in trips:
             print("Trip not found.")
             continue
-        trip = trips[tripID]
-        
+
+        trip = trips[trip_id]
+
+        # ----- Menu Actions -----
         if choice == "1":
-            driverID = input("Enter Driver ID: ").strip()
-            if driverID in drivers:
-                trip.assignDriver(drivers[driverID])
+            driver_id = input("Enter Driver ID: ").strip()
+            if driver_id in drivers:
+                trip.assign_driver(drivers[driver_id])
             else:
                 print("Driver not found.")
+
         elif choice == "2":
-            orderID = input("Enter Order ID: ").strip()
-            if orderID in orders:
-                trip.addOrder(orders[orderID])
+            order_id = input("Enter Order ID: ").strip()
+            if order_id in orders:
+                trip.add_order(order_id)
             else:
                 print("Order not found.")
+
         elif choice == "3":
-            status = input("Enter status: ").strip()
-            trip.updateStatus(status)
+            status = input("Enter new status: ")
+            trip.update_status(status, "Coordinator")
+
         elif choice == "4":
-            trip.viewTripDetails()
+            trip.view_trip_details()
+
         elif choice == "5":
-            trip.viewLogs()
+            trip.view_logs()
+
         elif choice == "6":
-            distance = float(input("Distance: ") or 10)
-            weight = float(input("Weight: ") or 50)
-            cost = trip.calculateCost(distance, weight)
-            print(f"Cost: RM{cost}")
-        elif choice == "7":
-            break
+            distance = float(input("Distance (km): "))
+            weight = float(input("Total Weight (kg): "))
+            cost = trip.calculate_cost(distance, weight)
+            print(f"Trip Cost = RM{cost}")
+
         else:
-            print("Invalid.")
-        
-        input("Press Enter...")
+            print("Invalid option.")
+
+        input("Press Enter to continue...")

@@ -1,84 +1,53 @@
-from datetime import datetime
 from classes.delivery_log import DeliveryLog
 
+
 class DeliveryTrip:
-    def __init__(self, tripID):
-        self.__tripID = tripID
-        self.__status = "Pending"
-        self.__assignedDriver = None
-        self.__orders = []
-        self.__logs = []
+    def __init__(self, trip_id, distance_km=0):
+        self.trip_id = trip_id
+        self.assigned_driver = None
+        self.status = "Pending"
+        self.orders = []
+        self.distance_km = distance_km
+        self.estimated_time = 0
+        self.cost = 0
+        self.log = DeliveryLog(trip_id)
 
-    def getTripID(self):
-        return self.__tripID
+        self.log.add_entry("Trip created")
 
-    # Assign Driver to Trip
-    def assignDriver(self, driver):
-        self.__assignedDriver = driver
-        driver.assignTrip(self)
-        self.__status = "Assigned"
+    # ---------- Association with Driver ----------
+    def assign_driver(self, driver):
+        self.assigned_driver = driver
+        driver.assign_trip(self)
+        self.log.add_entry(f"Driver assigned: {driver.driver_id}")
 
-        log = DeliveryLog(
-            logID=len(self.__logs) + 1,
-            tripID=self.__tripID,
-            action="Driver Assigned",
-            details=f"{driver.getName()} assigned to trip",
-            timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        )
+    # ---------- Aggregation with Orders ----------
+    def add_order(self, order):
+        self.orders.append(order)
+        self.log.add_entry(f"Order added: {order}")
 
-        self.__logs.append(log)
-        print(f"✔ Driver {driver.getName()} successfully assigned to Trip {self.__tripID}")
+    # ---------- Status Update ----------
+    def update_status(self, new_status, user="System"):
+        self.status = new_status
+        self.log.add_entry(f"Trip status updated to {new_status}", user)
 
-    # Aggregation - orders added into trip
-    def addOrder(self, order):
-        self.__orders.append(order)
+    # ---------- Cost Calculation ----------
+    def calculate_cost(self, distance_km, total_weight):
+        self.distance_km = distance_km
+        self.cost = round((distance_km * 1.5) + (total_weight * 0.5), 2)
+        self.log.add_entry(f"Cost recalculated: RM{self.cost}")
+        return self.cost
 
-        log = DeliveryLog(
-            logID=len(self.__logs) + 1,
-            tripID=self.__tripID,
-            action="Order Added",
-            details=f"Order {order.getOrderID()} added to trip",
-            timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        )
+    # ---------- Reporting ----------
+    def view_trip_details(self):
+        print("\n===== TRIP DETAILS =====")
+        print(f"Trip ID: {self.trip_id}")
+        print(f"Driver: {self.assigned_driver.driver_id if self.assigned_driver else 'Unassigned'}")
+        print(f"Status: {self.status}")
+        print(f"Orders in Trip: {len(self.orders)}")
+        print(f"Distance: {self.distance_km} km")
+        print(f"Estimated Time: {self.estimated_time} mins")
+        print(f"Cost: RM{self.cost}")
 
-        self.__logs.append(log)
-        print(f"✔ Order {order.getOrderID()} added into Trip {self.__tripID}")
-
-    # Update Delivery Status
-    def updateStatus(self, newStatus):
-        self.__status = newStatus
-
-        if self.__assignedDriver:
-            self.__assignedDriver.updateStatus(newStatus)
-
-        log = DeliveryLog(
-            logID=len(self.__logs) + 1,
-            tripID=self.__tripID,
-            action="Status Updated",
-            details=f"Trip status changed to {newStatus}",
-            timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        )
-
-        self.__logs.append(log)
-        print(f"✔ Trip {self.__tripID} status updated to {newStatus}")
-
-    # for UI testing / encapsulation 
-    def viewTripDetails(self):
-        driver = self.__assignedDriver.getName() if self.__assignedDriver else "None"
-
-        print("\n=========== Trip Details ===========")
-        print(f"Trip ID      : {self.__tripID}")
-        print(f"Status       : {self.__status}")
-        print(f"Driver       : {driver}")
-        print(f"Orders Count : {len(self.__orders)}")
-        print("====================================")
-
-    def viewLogs(self):
-        print("\n=========== Delivery Logs ==========")
-        if len(self.__logs) == 0:
-            print("No logs recorded yet.")
-        else:
-            for log in self.__logs:
-                log.displayLog()
-        print("====================================")
+    def view_logs(self):
+        self.log.display_log()
 
