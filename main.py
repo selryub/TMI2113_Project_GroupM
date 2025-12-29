@@ -37,7 +37,7 @@ def mainMenu():
         print("\n===== SYSTEM MAIN MENU =====")
         print("1. User Menu")
         print("2. Buyer Menu")
-        print("3. Coordinator Menu")
+        print("3. Village Coordinator Menu")
         print("4. Farmer Menu")
         print("5. Produce Menu")
         print("6. Order Menu")
