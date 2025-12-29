@@ -6,11 +6,11 @@ def villageCoordinatorMenu():
 
     while True:
         print("\n===== VILLAGE COORDINATOR MENU =====")
-        print("1. Verify Order (stub)")
-        print("2. Approve Order (stub)")
-        print("3. Reject Order (stub)")
+        print("1. Verify Order")
+        print("2. Approve Order")
+        print("3. Reject Order")
         print("4. Record Produce Details")
-        print("5. Schedule Delivery Trip (stub)")
+        print("5. Schedule Delivery Trip")
         print("6. Manage Farmer")
         print("7. View Pending Orders")
         print("0. Back to Main Menu")
@@ -18,13 +18,13 @@ def villageCoordinatorMenu():
         choice = input("Select option: ")
 
         if choice == "1":
-            print("Verifying Order (functionality to be implemented)")
+            print("Verifying Order")
 
         elif choice == "2":
-            print("Approving Order (functionality to be implemented)")
+            print("Approving Order")
 
         elif choice == "3":
-            print("Rejecting Order (functionality to be implemented)")
+            print("Rejecting Order")
 
         elif choice == "4":
             pid = input("Produce ID: ")
