@@ -2,7 +2,7 @@ from classes.community_driver import communityDriver
 from classes.delivery_trip import deliveryTrip
 
 from menus.user_menu import userMenu
-from menus.buyer_menu import buyerMenu
+from menus.buyer_menu import buyer_menu
 from menus.village_coordinator_menu import villageCoordinatorMenu 
 from menus.farmer_menu import farmerMenu
 from menus.produce_menu import produceMenu
@@ -50,7 +50,7 @@ def mainMenu():
         if choice == "1":
             userMenu()
         elif choice == "2":
-            buyerMenu()
+            buyer_menu()
         elif choice == "3":
             villageCoordinatorMenu()
         elif choice == "4":
