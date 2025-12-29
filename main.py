@@ -40,7 +40,7 @@ def mainMenu():
         print("3. Farmer Menu")
         print("4. Produce Menu")
         print("5. Order Menu")
-        print("6. Villae Coordinator Menu")
+        print("6. Village Coordinator Menu")
         print("7. Delivery Trip Menu")
         print("8. Community Driver Menu")
         print("9. Exit")
