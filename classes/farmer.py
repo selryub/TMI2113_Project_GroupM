@@ -1,8 +1,8 @@
 from classes.user import User
 
 class Farmer(User):
-    def __init__(self, user_id, user_name, user_email, farmName, farmLocation):
-        super().__init__(user_id, user_name, user_email)
+    def __init__(self, user_id, user_name, user_email, user_password, farmName, farmLocation):
+        super().__init__(user_id, user_name, user_email, user_password)
         self.__farmName = farmName
         self.__farmLocation = farmLocation
         self.__produceList = []
