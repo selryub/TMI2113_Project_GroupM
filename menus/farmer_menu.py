@@ -2,7 +2,7 @@ from classes.farmer import Farmer
 from classes.produce import Produce
 
 def farmerMenu():
-    farmer = Farmer(1, "John Doe", "john@email.com", "Sunny Farm", "Kuching")
+    farmer = Farmer(1, "John Doe", "john@email.com", "password123", "Sunny Farm", "Kuching")
 
     while True:
         print("\n===== FARMER MENU =====")
