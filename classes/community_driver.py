@@ -1,4 +1,4 @@
-class CommunityDriver:
+class communityDriver:
     def __init__(self, driver_id, name, vehicle_type, contact_number):
         self.driver_id = driver_id
         self.name = name

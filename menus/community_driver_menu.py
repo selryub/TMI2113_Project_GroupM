@@ -1,7 +1,7 @@
-from classes.community_driver import CommunityDriver
+from classes.community_driver import communityDriver
 
 
-def community_driver_menu(drivers, trips):
+def communityDriverMenu(drivers, trips):
     while True:
         print("\n===== COMMUNITY DRIVER MENU =====")
         print("1. Assign Trip")

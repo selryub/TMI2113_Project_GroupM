@@ -1,7 +1,7 @@
-from classes.delivery_trip import DeliveryTrip
+from classes.delivery_trip import deliveryTrip
 
 
-def delivery_trip_menu(trips, drivers, orders):
+def deliveryTripMenu(trips, drivers, orders):
     while True:
         print("\n===== DELIVERY TRIP MENU =====")
         print("1. Assign Driver")

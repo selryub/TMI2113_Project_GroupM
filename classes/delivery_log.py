@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class DeliveryLog:
+class deliveryLog:
     def __init__(self, trip_id):
         self.trip_id = trip_id
         self.entries = []   # list of dict log records

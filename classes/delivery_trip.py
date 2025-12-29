@@ -1,7 +1,7 @@
-from classes.delivery_log import DeliveryLog
+from classes.delivery_log import deliveryLog
 
 
-class DeliveryTrip:
+class deliveryTrip:
     def __init__(self, trip_id, distance_km=0):
         self.trip_id = trip_id
         self.assigned_driver = None
@@ -10,7 +10,7 @@ class DeliveryTrip:
         self.distance_km = distance_km
         self.estimated_time = 0
         self.cost = 0
-        self.log = DeliveryLog(trip_id)
+        self.log = deliveryLog(trip_id)
 
         self.log.add_entry("Trip created")
 
