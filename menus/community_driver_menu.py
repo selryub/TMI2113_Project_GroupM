@@ -9,11 +9,11 @@ def communityDriverMenu(drivers, trips):
         print("3. Set Availability")
         print("4. Check Availability")
         print("5. Display Driver Info")
-        print("0. Back")
+        print("6. Back to Main Menu")
 
         choice = input("Select: ").strip()
 
-        if choice == "0":
+        if choice == "6":
             break
 
         driver_id = input("Enter Driver ID: ").strip()
@@ -45,7 +45,7 @@ def communityDriverMenu(drivers, trips):
             driver.set_availability(value)
 
         elif choice == "4":
-            print(f"Available: {driver.is_available()}")
+            print(f"Available: {driver.isAvailable()}")
 
         elif choice == "5":
             driver.display_info()

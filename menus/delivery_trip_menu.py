@@ -10,11 +10,11 @@ def deliveryTripMenu(trips, drivers, orders):
         print("4. View Trip Details")
         print("5. View Trip Logs")
         print("6. Calculate Cost")
-        print("0. Back")
+        print("7. Back to Main Menu")
 
         choice = input("Select: ").strip()
 
-        if choice == "0":
+        if choice == "7":
             break
 
         trip_id = input("Enter Trip ID: ").strip()

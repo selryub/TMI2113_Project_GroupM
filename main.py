@@ -1,3 +1,6 @@
+from classes.community_driver import communityDriver
+from classes.delivery_trip import deliveryTrip
+
 from menus.user_menu import userMenu
 from menus.buyer_menu import buyerMenu
 from menus.village_coordinator_menu import villageCoordinatorMenu 
@@ -6,6 +9,28 @@ from menus.produce_menu import produceMenu
 from menus.order_menu import orderMenu
 from menus.delivery_trip_menu import deliveryTripMenu
 from menus.community_driver_menu import communityDriverMenu
+
+
+drivers = {
+    "D01": communityDriver("D01", "Aiman", "Motorcycle", "0123456789"),
+    "D02": communityDriver("D02", "Liang", "Van", "0132188576")
+}
+
+trips = {
+    "T01": deliveryTrip("T01", 12),
+    "T02": deliveryTrip("T02", 20)
+}
+
+orders = {
+    "O01": "Order#01",
+    "O02": "Order#02"
+}
+
+
+# --------- Set initial availability ---------
+drivers["D01"].set_availability(True)   # D01 is available
+drivers["D02"].set_availability(False)  # D02 is not available
+
 
 def mainMenu():
     while True:
@@ -35,9 +60,9 @@ def mainMenu():
         elif choice == "6":
             orderMenu()
         elif choice == "7":
-            deliveryTripMenu()
+            deliveryTripMenu(trips, drivers, orders)
         elif choice == "8":
-            communityDriverMenu()
+            communityDriverMenu(drivers, trips)
         elif choice == "9":
             print("Exiting system...")
             break
