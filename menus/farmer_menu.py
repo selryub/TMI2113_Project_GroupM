@@ -1,7 +1,7 @@
 from classes.farmer import Farmer
 from classes.produce import Produce
 
-def farmer_menu():
+def farmerMenu():
     # Create a sample farmer object
     farmer = Farmer(1, "John Doe", "john@email.com", "password123", "Sunny Farm", "Kuching")
 
