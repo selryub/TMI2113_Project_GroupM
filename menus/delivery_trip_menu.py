@@ -7,9 +7,9 @@ def deliveryTripMenu(trips, drivers, orders):
         print("1. Assign Driver")
         print("2. Add Order to Trip")
         print("3. Update Trip Status")
-        print("4. View Trip Details")
-        print("5. View Trip Logs")
-        print("6. Calculate Cost")
+        print("4. Calculate Cost")
+        print("5. View Trip Details")
+        print("6. View Trip Logs")
         print("7. Back to Main Menu")
 
         choice = input("Select: ").strip()
@@ -45,16 +45,16 @@ def deliveryTripMenu(trips, drivers, orders):
             trip.update_status(status, "Coordinator")
 
         elif choice == "4":
-            trip.view_trip_details()
-
-        elif choice == "5":
-            trip.view_logs()
-
-        elif choice == "6":
             distance = float(input("Distance (km): "))
             weight = float(input("Total Weight (kg): "))
             cost = trip.calculate_cost(distance, weight)
             print(f"Trip Cost = RM{cost}")
+
+        elif choice == "5":
+            trip.view_trip_details()
+
+        elif choice == "6":
+            trip.view_logs()
 
         else:
             print("Invalid option.")
