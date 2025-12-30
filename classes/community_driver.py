@@ -13,9 +13,8 @@ class communityDriver:
         self.assigned_trips.append(trip)
         self.__availability = False
 
-        print(f"\Trip assigned successfully.")
-        print(f"Trip ID: {trip.trip_id}")
-        print(f"Assigned To: {self.driver_id}")
+        print(f"\nTrip assigned successfully.")
+        print(f"Trip {trip.trip_id} assigned to {self.driver_id}.")
 
     def add_trip(self, trip):
         self.assign_trip(trip)
@@ -44,7 +43,7 @@ class communityDriver:
         print(f"Driver Name    : {self.name}")
         print(f"Vehicle Type   : {self.vehicle_type}")
         print(f"Contact Number : {self.contact_number}")
-        print(f"Availability   : {self.is_available()}")
+        print(f"Availability   : {self.isAvailable()}")
         print(f"Assigned Trips : {len(self.assigned_trips)}")
         print("========================================")
 
