@@ -19,8 +19,12 @@ class communityDriver:
 
     # ---------- Status Update ----------
     def update_delivery_status(self, trip, status, user="Driver"):
-        trip.update_status(status, user)
-
+        if trip in self.assigned_trips:
+            trip.status = status
+            print(f"Trip {trip.trip_id} status updated to {status}.")
+        else:
+            print(f"Error: Trip {trip.trip_id} is not assigned to driver {self.name}.")
+       
     # ---------- Availability ----------
     def set_availability(self, value):
         self.__availability = value
