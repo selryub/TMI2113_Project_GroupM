@@ -5,7 +5,6 @@ class communityDriver:
         self.vehicle_type = vehicle_type
         self.contact_number = contact_number
         self.__availability = True
-        self.rating = 5.0
         self.assigned_trips = []
 
     # ---------- Assign Trip ----------
