@@ -16,7 +16,7 @@ def userMenu():
         print("4. Verify Email")
         print("5. Reset Password")
         print("6. Logout")
-        print("7. Back to Main Menu")
+        print("0. Back to Main Menu")
         print("================================")
 
         choice = input("Select option: ")
@@ -70,7 +70,7 @@ def userMenu():
                 current_user = None
 
         # ---------------- EXIT TO MAIN ----------------
-        elif choice == "7":
+        elif choice == "0":
             print("\nReturning to Main Menu...")
             break
 
