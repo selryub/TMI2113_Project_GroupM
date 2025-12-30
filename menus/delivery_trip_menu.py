@@ -42,7 +42,7 @@ def deliveryTripMenu(trips, drivers, orders):
 
         elif choice == "3":
             status = input("Enter new status: ")
-            trip.update_status(status, "Coordinator")
+            trip.update_status(status, "Village Coordinator")
 
         elif choice == "4":
             distance = float(input("Distance (km): "))
