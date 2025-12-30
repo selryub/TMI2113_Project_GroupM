@@ -8,7 +8,7 @@ class deliveryTrip:
         self.estimated_time = 0
         self.cost = 0
 
-        print(f"Trip created")
+        print(f"\nTrip created.")
 
     # ---------- Association with Driver ----------
     def assign_driver(self, driver):
@@ -18,45 +18,45 @@ class deliveryTrip:
     # ---------- Aggregation with Orders ----------
     def add_order(self, order):
         if not self.assigned_driver:
-            print(f"Error: Cannot add order. Assign a driver to Trip {self.trip_id} first.")
+            print(f"\nError: Cannot add order. Assign a driver to Trip {self.trip_id} first.")
             return
 
         self.orders.append(order)
-        print(f"Order added to Trip {self.trip_id}.")
+        print(f"\nOrder added to Trip {self.trip_id}.")
 
     # ---------- Status Update ----------
     def update_status(self, new_status, user="System"):
         if not self.assigned_driver:
-            print(f"Error: Cannot update status. Assign a driver to Trip {self.trip_id} first.")
+            print(f"\nError: Cannot update status. Assign a driver to Trip {self.trip_id} first.")
             return
 
         self.status = new_status
-        print(f"Trip {self.trip_id} status updated to {new_status} by {user}.")
+        print(f"\nTrip {self.trip_id} status updated to {new_status} by {user}.")
 
     # ---------- Cost Calculation ----------
     def calculate_cost(self, distance, total_weight, average_speed = 40):
 
         if not self.assigned_driver:
-            print(f"Error: Cannot calculate cost. Assign a driver to Trip {self.trip_id} first.")
+            print(f"\nError: Cannot calculate cost. Assign a driver to Trip {self.trip_id} first.")
             self.cost = 0
             self.estimated_time = 0
             return 0
 
         # Validation rules
         if distance <= 0:
-            print(f"Error: Invalid distance value ({distance} km). Cost calculation terminated.")
+            print(f"\nError: Invalid distance value ({distance} km). Cost calculation terminated.")
             self.cost = 0
             self.estimated_time = 0
             return 0
         
         if total_weight < 0:
-            print(f"Error: Invalid weight value ({total_weight} kg). Cost calculation terminated.")
+            print(f"\nError: Invalid weight value ({total_weight} kg). Cost calculation terminated.")
             self.cost = 0
             self.estimated_time = 0
             return 0
         
         if average_speed <= 0:
-            print(f"Error: Cost calculation failed due to invalid average speed value ({average_speed}).")
+            print(f"\nError: Cost calculation failed due to invalid average speed value ({average_speed}).")
             self.cost = 0
             self.estimated_time = 0
             return 0

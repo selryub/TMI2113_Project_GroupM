@@ -26,9 +26,6 @@ orders = {
     "O02": "Order#02"
 }
 
-drivers["D01"].set_availability(True)   # D01 is available
-drivers["D02"].set_availability(False)  # D02 is not available
-
 produce_list = []
 
 def mainMenu():
