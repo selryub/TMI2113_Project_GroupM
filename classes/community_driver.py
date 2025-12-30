@@ -38,10 +38,10 @@ class communityDriver:
     def display_info(self):
         print("\n===== DRIVER INFO =====")
         print(f"Driver ID: {self.driver_id}")
-        print(f"Name: {self.name}")
-        print(f"Vehicle: {self.vehicle_type}")
-        print(f"Contact: {self.contact_number}")
-        print(f"Available: {self.isAvailable()}")
+        print(f"Driver Name: {self.name}")
+        print(f"Vehicle Type: {self.vehicle_type}")
+        print(f"Contact Number: {self.contact_number}")
+        print(f"Availability: {self.isAvailable()}")
         print(f"Assigned Trips: {len(self.assigned_trips)}")
 
         if not self.assigned_trips:

@@ -41,7 +41,7 @@ def communityDriverMenu(drivers, trips):
                 print("Trip not found.")
 
         elif choice == "3":
-            value = input("Set available? (y/n): ").lower() == "y"
+            value = input("Available? (y/n): ").lower() == "y"
             driver.set_availability(value)
 
         elif choice == "4":
