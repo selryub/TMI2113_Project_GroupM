@@ -31,9 +31,9 @@ class deliveryTrip:
         self.log.add_entry(f"Trip status updated to {new_status}", user)
 
     # ---------- Cost Calculation ----------
-    def calculate_cost(self, distance_km, total_weight):
-        self.distance_km = distance_km
-        self.cost = round((distance_km * 1.5) + (total_weight * 0.5), 2)
+    def calculate_cost(self, distance, total_weight):
+        self.distance_km = distance
+        self.cost = round((distance * 1.5) + (total_weight * 0.5), 2)
         self.log.add_entry(f"Cost recalculated: RM{self.cost}")
         return self.cost
 
