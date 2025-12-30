@@ -45,7 +45,7 @@ def communityDriverMenu(drivers, trips):
             driver.set_availability(value)
 
         elif choice == "4":
-            print(f"Available: {driver.isAvailable()}")
+            print(f"Availability: {driver.isAvailable()}")
 
         elif choice == "5":
             driver.display_info()
@@ -53,4 +53,3 @@ def communityDriverMenu(drivers, trips):
         else:
             print("Invalid option.")
 
-        input("Press Enter to continue...")

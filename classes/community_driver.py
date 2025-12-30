@@ -40,3 +40,11 @@ class communityDriver:
         print(f"Available: {self.isAvailable()}")
         print(f"Assigned Trips: {len(self.assigned_trips)}")
 
+        if not self.assigned_trips:
+            print("No trips assigned yet.")
+            return
+
+        print("\n--- Assigned Trip Details ---")
+        for trip in self.assigned_trips:
+            print(f"Trip ID: {trip.trip_id} | Status: {trip.status}")
+

@@ -59,4 +59,4 @@ def deliveryTripMenu(trips, drivers, orders):
         else:
             print("Invalid option.")
 
-        input("Press Enter to continue...")
+

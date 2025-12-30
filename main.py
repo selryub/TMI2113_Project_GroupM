@@ -7,8 +7,8 @@ from menus.village_coordinator_menu import villageCoordinatorMenu
 from menus.farmer_menu import farmerMenu
 from menus.produce_menu import produceMenu
 from menus.order_menu import orderMenu
-from menus.delivery_trip_menu import deliveryTripMenu
 from menus.community_driver_menu import communityDriverMenu
+from menus.delivery_trip_menu import deliveryTripMenu
 
 
 drivers = {
@@ -40,8 +40,8 @@ def mainMenu():
         print("4. Produce Menu")
         print("5. Order Menu")
         print("6. Village Coordinator Menu")
-        print("7. Delivery Trip Menu")
-        print("8. Community Driver Menu")
+        print("7. Community Driver Menu")
+        print("8. Delivery Trip Menu")
         print("9. Exit")
 
         choice = input("Select option: ")
@@ -59,9 +59,9 @@ def mainMenu():
         elif choice == "6":
             villageCoordinatorMenu()
         elif choice == "7":
-            deliveryTripMenu(trips, drivers, orders)
-        elif choice == "8":
             communityDriverMenu(drivers, trips)
+        elif choice == "8":
+            deliveryTripMenu(trips, drivers, orders)
         elif choice == "9":
             print("Exiting system...")
             break
