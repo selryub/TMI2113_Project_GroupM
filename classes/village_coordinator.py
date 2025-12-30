@@ -44,7 +44,7 @@ class VillageCoordinator(User):
 
     def manageFarmer(self, farmer):
         self.__managedFarmers.append(farmer)
-        print(f"Farmer {farmer.user_name} assigned to coordinator")
+        print(f"Farmer {farmer} assigned to coordinator")
 
     def viewPendingOrders(self):
         print("Displaying pending orders...")
