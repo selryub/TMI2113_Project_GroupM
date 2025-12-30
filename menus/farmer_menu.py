@@ -1,7 +1,8 @@
 from classes.farmer import Farmer
 from classes.produce import Produce
 
-def farmerMenu():
+def farmer_menu():
+    # Create a sample farmer object
     farmer = Farmer(1, "John Doe", "john@email.com", "password123", "Sunny Farm", "Kuching")
 
     while True:
@@ -23,26 +24,26 @@ def farmerMenu():
             weight = float(input("Weight (kg): "))
             price = float(input("Price per kg: "))
             produce = Produce(pid, pname, category, grade, weight, price)
-            farmer.supplyProduce(produce)
+            farmer.supply_produce(produce)
 
         elif choice == "2":
             pid = input("Enter Produce ID to update: ")
             weight = input("Enter new weight (leave blank to skip): ")
             grade = input("Enter new grade (leave blank to skip): ")
-            farmer.updateProduceDetails(
+            farmer.update_produce_details(
                 pid,
                 weight=float(weight) if weight else None,
                 grade=grade if grade else None
             )
 
         elif choice == "3":
-            farmer.viewSettlementStatement()
+            farmer.view_settlement_statement()
 
         elif choice == "4":
-            farmer.reviewDeliveryRecords()
+            farmer.review_delivery_records()
 
         elif choice == "5":
-            farmer.viewProfile()  # Polymorphism - Override
+            farmer.view_profile()  # Polymorphism - Override
 
         elif choice == "0":
             break
