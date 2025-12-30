@@ -7,6 +7,17 @@ class Farmer(User):
         self.__farmLocation = farmLocation
         self.__produceList = []
 
+    # Polymorphism - Method Override from User class
+    def viewProfile(self):
+        print("\n===== FARMER PROFILE =====")
+        print(f"User ID   : {self.userID}")
+        print(f"Name      : {self.userName}")
+        print(f"Email     : {self.userEmail}")
+        print(f"Farm Name : {self.__farmName}")
+        print(f"Location  : {self.__farmLocation}")
+        print(f"Produce   : {len(self.__produceList)} items")
+        print("==========================")
+
     def supplyProduce(self, produce):
         self.__produceList.append(produce)
         print(f"Produce supplied by farmer {self.__farmName}")

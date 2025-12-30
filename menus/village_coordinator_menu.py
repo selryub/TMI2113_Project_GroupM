@@ -13,6 +13,7 @@ def villageCoordinatorMenu():
         print("5. Schedule Delivery Trip")
         print("6. Manage Farmer")
         print("7. View Pending Orders")
+        print("8. View Profile")
         print("0. Back to Main Menu")
 
         choice = input("Select option: ")
@@ -47,6 +48,9 @@ def villageCoordinatorMenu():
 
         elif choice == "7":
             vc.viewPendingOrders()
+
+        elif choice == "8":
+            vc.viewProfile()  # Polymorphism - Override
 
         elif choice == "0":
             break

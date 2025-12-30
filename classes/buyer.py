@@ -9,6 +9,17 @@ class Buyer(User):
         self.payment_method = payment_method
         self.order_history = []
 
+    # Polymorphism - Method Override from User class
+    def viewProfile(self):
+        print("\n===== BUYER PROFILE =====")
+        print(f"User ID  : {self.userID}")
+        print(f"Name     : {self.userName}")
+        print(f"Email    : {self.userEmail}")
+        print(f"Address  : {self.delivery_address}")
+        print(f"Payment  : {self.payment_method}")
+        print(f"Orders   : {len(self.order_history)}")
+        print("=========================")
+
     def browse_produce(self):
         print("\nAvailable produce:")
         print("1. Tomato - RM3/kg")

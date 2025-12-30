@@ -7,6 +7,17 @@ class VillageCoordinator(User):
         self.__contactNumber = contactNumber
         self.__managedFarmers = []
 
+    # Polymorphism - Method Override from User class
+    def viewProfile(self):
+        print("\n===== COORDINATOR PROFILE =====")
+        print(f"User ID    : {self.userID}")
+        print(f"Name       : {self.userName}")
+        print(f"Email      : {self.userEmail}")
+        print(f"Village    : {self.__villageName}")
+        print(f"Contact    : {self.__contactNumber}")
+        print(f"Farmers    : {len(self.__managedFarmers)} managed")
+        print("===============================")
+
     # UC4 — Verify Orders
     def verifyOrder(self, order):
         print(f"Verifying Order {order.getOrderID()}...")

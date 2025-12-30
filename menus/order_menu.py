@@ -11,7 +11,8 @@ def orderMenu():
         print("4. Update Order Status")
         print("5. View Order Details")
         print("6. View All Orders")
-        print("7. Back to Main Menu")
+        print("7. Delete Order")
+        print("0. Back to Main Menu")
         
         choice = input("Select option: ")
         
@@ -111,6 +112,24 @@ def orderMenu():
                     print(f"Order ID: {order.getOrderID()} | Status: {order.getStatus()} | Total: RM{order.getTotalPrice():.2f}")
         
         elif choice == "7":
+            if not orders:
+                print("No orders available.")
+                continue
+            
+            orderID = input("Enter Order ID to delete: ")
+            found = False
+            
+            for order in orders:
+                if order.getOrderID() == orderID:
+                    orders.remove(order)
+                    print(f"Order {orderID} deleted successfully.")
+                    found = True
+                    break
+            
+            if not found:
+                print("Order not found.")
+        
+        elif choice == "0":
             break
         
         else:

@@ -10,7 +10,8 @@ def farmerMenu():
         print("2. Update Produce Details")
         print("3. View Settlement Statement")
         print("4. Review Delivery Records")
-        print("5. Back to Main Menu")
+        print("5. View Profile")
+        print("0. Back to Main Menu")
 
         choice = input("Select option: ")
 
@@ -41,6 +42,9 @@ def farmerMenu():
             farmer.reviewDeliveryRecords()
 
         elif choice == "5":
+            farmer.viewProfile()  # Polymorphism - Override
+
+        elif choice == "0":
             break
 
         else:

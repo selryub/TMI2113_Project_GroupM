@@ -7,6 +7,7 @@ def show_buyer_menu():
     print("1. Browse Produce Catalog")
     print("2. Place Order")
     print("3. View Orders")
+    print("4. View Profile")
     print("0. Logout")
 
 def buyer_menu():
@@ -31,6 +32,8 @@ def buyer_menu():
             buyer.place_order()
         elif choice == "3":
             buyer.view_orders()
+        elif choice == "4":
+            buyer.viewProfile()  # Polymorphism - Override
         elif choice == "0":
             buyer.logout()
             break

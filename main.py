@@ -55,7 +55,7 @@ def mainMenu():
         elif choice == "3":
             farmerMenu()
         elif choice == "4":
-            produceMenu()
+            produceMenu(produce_list)
         elif choice == "5":
             orderMenu()
         elif choice == "6":
@@ -73,4 +73,3 @@ def mainMenu():
 
 if __name__ == "__main__":
     mainMenu()
-
