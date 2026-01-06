@@ -1,8 +1,33 @@
 from classes.village_coordinator import VillageCoordinator
 from classes.produce import Produce
+from classes.farmer import Farmer
+from classes.order import Order
 
 def villageCoordinatorMenu():
-    vc = VillageCoordinator(1, "Alice", "alice@email.com", "password123", "Happy Village", "0123456789")
+    vc = VillageCoordinator(
+        user_id=1,
+        user_name="Alice",
+        user_email="alice@gmail.com", 
+        user_password="password123", 
+        villageName="Happy Village", 
+        contactNumber="0123456789"
+    )
+
+    tomato = Produce("P001", "Tomatoes", "Vegetables", "A", 100, 3.50)
+    sample_farmer = Farmer(101, "John Doe", "john@gmail.com", "farm123", "Sunny Farm", "Kuching")
+
+    order1 = Order("ORD001", "BUY001", "P001")
+    order1.setQuantity(10)
+    order1.calculateTotal(3.50)
+
+    order2 = Order("ORD002", "BUY002", "P002")
+    order2.setQuantity(5)
+    order2.calculateTotal(2.50)
+
+    vc.add_order_for_verification(order1)
+    vc.add_order_for_verification(order2)
+
+    vc.manageFarmer(sample_farmer)
 
     while True:
         print("\n===== VILLAGE COORDINATOR MENU =====")
@@ -19,13 +44,17 @@ def villageCoordinatorMenu():
         choice = input("Select option: ")
 
         if choice == "1":
-            print("Verifying Order")
+            order_id = input("Enter Order ID to verify: ")
+            vc.verifyOrder(order_id)
 
         elif choice == "2":
-            print("Approving Order")
+            order_id = input("Enter Order ID to approve: ")
+            vc.approveOrder(order_id)
 
         elif choice == "3":
-            print("Rejecting Order")
+            order_id = input("Enter Order ID to reject: ")
+            reason = input("Enter rejection reason: ")
+            vc.rejectOrder(order_id, reason)
 
         elif choice == "4":
             pid = input("Produce ID: ")
@@ -34,17 +63,19 @@ def villageCoordinatorMenu():
             grade = input("Grade: ")
             weight = float(input("Weight (kg): "))
             price = float(input("Price per kg: "))
+
             produce = Produce(pid, pname, category, grade, weight, price)
-            vc.recordProduceDetails(produce, weight, grade)
+            vc.recordProduceDetails(produce, weight, grade, price)
 
         elif choice == "5":
             print("Scheduling Delivery Trip")
 
         elif choice == "6":
             fname = input("Farmer Name: ")
-            f = input("Farmer Email: ")
-            farmer = f  # stub: you could create Farmer instance if needed
-            vc.manageFarmer(fname)
+            femail = input("Farmer Email: ")
+
+            new_farmer = Farmer(102, fname, femail, "temp123", fname + " Farm", "Local")
+            vc.manageFarmer(new_farmer)
 
         elif choice == "7":
             vc.viewPendingOrders()
