@@ -2,7 +2,7 @@ from classes.village_coordinator import VillageCoordinator
 from classes.produce import Produce
 
 def villageCoordinatorMenu():
-    vc = VillageCoordinator(1, "Alice", "alice@email.com", "password123", "Happy Village", "012-3456789")
+    vc = VillageCoordinator(1, "Alice", "alice@email.com", "password123", "Happy Village", "0123456789")
 
     while True:
         print("\n===== VILLAGE COORDINATOR MENU =====")
@@ -38,7 +38,7 @@ def villageCoordinatorMenu():
             vc.recordProduceDetails(produce, weight, grade)
 
         elif choice == "5":
-            print("Scheduling Delivery Trip (functionality to be implemented)")
+            print("Scheduling Delivery Trip")
 
         elif choice == "6":
             fname = input("Farmer Name: ")
