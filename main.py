@@ -1,5 +1,6 @@
 from classes.community_driver import communityDriver
 from classes.delivery_trip import deliveryTrip
+from classes.village_coordinator import VillageCoordinator
 
 from menus.user_menu import userMenu
 from menus.buyer_menu import buyer_menu
